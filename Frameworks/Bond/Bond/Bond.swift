@@ -198,11 +198,11 @@ extension Dynamic: Bondable {
 public extension Dynamic
 {
   public func map<U>(f: T -> U) -> Dynamic<U> {
-    return _map(self, f)
+    return _map(self, f: f)
   }
   
   public func filter(f: T -> Bool) -> Dynamic<T> {
-    return _filter(self, f)
+    return _filter(self, f: f)
   }
   
   public func filter(f: (T, T) -> Bool, _ v: T) -> Dynamic<T> {
@@ -218,11 +218,11 @@ public extension Dynamic
   }
   
   public func zip<U>(d: Dynamic<U>) -> Dynamic<(T, U)> {
-    return reduce(self, d) { ($0, $1) }
+    return reduce(self, dB: d) { ($0, $1) }
   }
   
   public func skip(count: Int) -> Dynamic<T> {
-    return _skip(self, count)
+    return _skip(self, count: count)
   }
 }
 

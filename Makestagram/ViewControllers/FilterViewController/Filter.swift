@@ -22,35 +22,41 @@ func applyFilter(filter: CIFilter, toImage image: UIImage) -> UIImage {
   let originalOrientation = image.imageOrientation;
   let originalScale = image.scale
   
-  let cgimg = context.createCGImage(filter.outputImage, fromRect: filter.outputImage.extent())
+  let cgimg = context.createCGImage(filter.outputImage!, fromRect: filter.outputImage!.extent)
   
-  return UIImage(CGImage: cgimg, scale: originalScale, orientation: originalOrientation)!
+  return UIImage(CGImage: cgimg, scale: originalScale, orientation: originalOrientation)
 }
 
 func sepiaFilter(image: UIImage) -> UIImage {
   let beginImage = CIImage(image: image)
   let filter = CIFilter(name: "CISepiaTone")
-  filter.setValue(beginImage, forKey: kCIInputImageKey)
-  filter.setValue(0.5, forKey: kCIInputIntensityKey)
+  filter!.setValue(beginImage, forKey: kCIInputImageKey)
+  filter!.setValue(0.5, forKey: kCIInputIntensityKey)
   
-  return applyFilter(filter, toImage:image)
+  return applyFilter(filter!, toImage:image)
 }
 
 func vignetteFilter(image: UIImage) -> UIImage {
   let beginImage = CIImage(image: image)
-  let parameters = [ kCIInputRadiusKey: 0.7, kCIInputIntensityKey: 20, kCIInputImageKey: beginImage ]
+
+  var parameters = [String : AnyObject]()
+  parameters[kCIInputRadiusKey] = 0.7
+  parameters[kCIInputIntensityKey] = 20
+  parameters[kCIInputImageKey] = beginImage
   let filter = CIFilter(name: "CIVignette", withInputParameters: parameters)
   
-  return applyFilter(filter, toImage:image)
+  return applyFilter(filter!, toImage:image)
 }
 
 func vibranceFilter(image: UIImage) -> UIImage {
   let beginImage = CIImage(image: image)
   
-  let parameters = [kCIInputImageKey: beginImage, "inputAmount": 3]
+  var parameters = [String : AnyObject]()
+  parameters[kCIInputImageKey] = beginImage
+  parameters["inputAmount"] = 3
   let filter = CIFilter(name: "CIVibrance", withInputParameters: parameters)
     
-  return applyFilter(filter, toImage:image)
+  return applyFilter(filter!, toImage:image)
 }
 
 func noFilter(image: UIImage) -> UIImage {

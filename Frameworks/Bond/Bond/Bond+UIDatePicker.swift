@@ -27,7 +27,7 @@
 
 import UIKit
 
-@objc class DatePickerDynamicHelper
+class DatePickerDynamicHelper
 {
   weak var control: UIDatePicker?
   var listener: (NSDate -> Void)?
@@ -68,7 +68,7 @@ extension UIDatePicker /*: Dynamical, Bondable */ {
       let bond = Bond<NSDate>() { [weak self] v in if let s = self { s.date = v } }
       d.bindTo(bond, fire: false, strongly: false)
       d.retain(bond)
-      objc_setAssociatedObject(self, &dateDynamicHandleUIDatePicker, d, objc_AssociationPolicy(OBJC_ASSOCIATION_RETAIN_NONATOMIC))
+      objc_setAssociatedObject(self, &dateDynamicHandleUIDatePicker, d, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
       return d
     }
   }

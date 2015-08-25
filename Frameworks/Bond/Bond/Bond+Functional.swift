@@ -28,11 +28,11 @@
 // MARK: Map
 
 public func map<T, U>(dynamic: Dynamic<T>, f: T -> U) -> Dynamic<U> {
-  return _map(dynamic, f)
+  return _map(dynamic, f: f)
 }
 
 public func map<S: Dynamical, T, U where S.DynamicType == T>(dynamical: S, f: T -> U) -> Dynamic<U> {
-  return _map(dynamical.designatedDynamic, f)
+  return _map(dynamical.designatedDynamic, f: f)
 }
 
 internal func _map<T, U>(dynamic: Dynamic<T>, f: T -> U) -> Dynamic<U> {
@@ -51,7 +51,7 @@ internal func _map<T, U>(dynamic: Dynamic<T>, f: T -> U) -> Dynamic<U> {
 // MARK: Filter
 
 public func filter<T>(dynamic: Dynamic<T>, f: T -> Bool) -> Dynamic<T> {
-  return _filter(dynamic, f)
+  return _filter(dynamic, f: f)
 }
 
 public func filter<T>(dynamic: Dynamic<T>, f: (T, T) -> Bool, v: T) -> Dynamic<T> {
@@ -59,7 +59,7 @@ public func filter<T>(dynamic: Dynamic<T>, f: (T, T) -> Bool, v: T) -> Dynamic<T
 }
 
 public func filter<S: Dynamical, T where S.DynamicType == T>(dynamical: S, f: T -> Bool) -> Dynamic<T> {
-  return _filter(dynamical.designatedDynamic, f)
+  return _filter(dynamical.designatedDynamic, f: f)
 }
 
 internal func _filter<T>(dynamic: Dynamic<T>, f: T -> Bool) -> Dynamic<T> {
@@ -81,19 +81,19 @@ internal func _filter<T>(dynamic: Dynamic<T>, f: T -> Bool) -> Dynamic<T> {
 // MARK: Reduce
 
 public func reduce<A, B, T>(dA: Dynamic<A>, dB: Dynamic<B>, f: (A, B) -> T) -> Dynamic<T> {
-  return _reduce(dA, dB, f(dA.value, dB.value), f)
+  return _reduce(dA, dB: dB, v0: f(dA.value, dB.value), f: f)
 }
 
 public func reduce<A, B, T>(dA: Dynamic<A>, dB: Dynamic<B>, v0: T, f: (A, B) -> T) -> Dynamic<T> {
-  return _reduce(dA, dB, v0, f)
+  return _reduce(dA, dB: dB, v0: v0, f: f)
 }
 
 public func reduce<A, B, C, T>(dA: Dynamic<A>, dB: Dynamic<B>, dC: Dynamic<C>, v0: T, f: (A, B, C) -> T) -> Dynamic<T> {
-  return _reduce(dA, dB, dC, v0, f)
+  return _reduce(dA, dB: dB, dC: dC, v0: v0, f: f)
 }
 
 public func reduce<A, B, C, T>(dA: Dynamic<A>, dB: Dynamic<B>, dC: Dynamic<C>, f: (A, B, C) -> T) -> Dynamic<T> {
-  return _reduce(dA, dB, dC, f(dA.value, dB.value, dC.value), f)
+  return _reduce(dA, dB: dB, dC: dC, v0: f(dA.value, dB.value, dC.value), f: f)
 }
 
 public func _reduce<A, B, T>(dA: Dynamic<A>, dB: Dynamic<B>, v0: T, f: (A, B) -> T) -> Dynamic<T> {
@@ -155,7 +155,7 @@ public func zip<T, U>(dynamic: Dynamic<T>, value: U) -> Dynamic<(T, U)> {
 }
 
 public func zip<T, U>(d1: Dynamic<T>, d2: Dynamic<U>) -> Dynamic<(T, U)> {
-  return reduce(d1, d2) { ($0, $1) }
+  return reduce(d1, dB: d2) { ($0, $1) }
 }
 
 // MARK: Skip
@@ -187,7 +187,7 @@ public func _skip<T>(dynamic: Dynamic<T>, count: Int) -> Dynamic<T> {
 }
 
 public func skip<T>(dynamic: Dynamic<T>, count: Int) -> Dynamic<T> {
-  return _skip(dynamic, count)
+  return _skip(dynamic, count: count)
 }
 
 // MARK: Any

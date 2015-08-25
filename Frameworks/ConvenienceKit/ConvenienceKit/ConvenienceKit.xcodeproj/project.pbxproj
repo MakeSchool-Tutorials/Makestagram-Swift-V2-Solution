@@ -283,7 +283,9 @@
 		62EAE5D31AD82A000069D0EC /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Benjamin Encz";
 				TargetAttributes = {
 					62EAE5DB1AD82A000069D0EC = {
@@ -450,6 +452,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -534,6 +537,7 @@
 					"$(PROJECT_DIR)/Frameworks/Nimble.framework",
 					"$(PROJECT_DIR)/Frameworks/Quick.framework",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Benjamin-Encz.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -557,6 +561,7 @@
 					"$(PROJECT_DIR)/Frameworks/Nimble.framework",
 					"$(PROJECT_DIR)/Frameworks/Quick.framework",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Benjamin-Encz.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -583,6 +588,7 @@
 					"$(PROJECT_DIR)/Frameworks/Nimble.framework",
 					"$(PROJECT_DIR)/Frameworks/Quick.framework",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Benjamin-Encz.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ConvenienceKitTests/UIKit/ConvenienceKitTests-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -607,6 +613,7 @@
 					"$(PROJECT_DIR)/Frameworks/Nimble.framework",
 					"$(PROJECT_DIR)/Frameworks/Quick.framework",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Benjamin-Encz.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ConvenienceKitTests/UIKit/ConvenienceKitTests-Bridging-Header.h";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ConvenienceKitApp.app/ConvenienceKitApp";
@@ -623,6 +630,7 @@
 				);
 				INFOPLIST_FILE = ConvenienceKitApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Benjamin-Encz.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -633,6 +641,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ConvenienceKitApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Benjamin-Encz.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
