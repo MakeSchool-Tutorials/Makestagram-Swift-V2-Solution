@@ -99,7 +99,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.1803921568627451" green="0.19215686274509805" blue="0.20784313725490197" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="5kQ-Fc-53c" firstAttribute="top" secondItem="rQK-n9-ppg" secondAttribute="bottom" id="Cwc-K2-LRD"/>
                             <constraint firstItem="5kQ-Fc-53c" firstAttribute="leading" secondItem="lQc-32-hXo" secondAttribute="leading" id="DTb-0h-YNg"/>
@@ -270,7 +270,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.18039215689999999" green="0.19215686269999999" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="w7q-t8-aWN" firstAttribute="leading" secondItem="tHo-HU-ZhB" secondAttribute="leading" id="2Hg-VZ-2nb"/>
                             <constraint firstAttribute="trailingMargin" secondItem="w7q-t8-aWN" secondAttribute="trailing" id="Mjp-6h-DkK"/>
@@ -301,7 +301,7 @@
         <scene sceneID="b3Q-4h-7Kd">
             <objects>
                 <tabBarController storyboardIdentifier="TabBarController" id="Eie-IU-D0k" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="Qf0-NT-2S5">
+                    <tabBar key="tabBar" contentMode="scaleToFill" backgroundImage="tabbar" id="Qf0-NT-2S5">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -327,5 +327,6 @@
         <image name="home" width="38" height="36"/>
         <image name="more" width="26" height="17"/>
         <image name="people" width="42" height="42"/>
+        <image name="tabbar" width="321" height="49"/>
     </resources>
 </document>
