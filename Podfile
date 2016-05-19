@@ -5,7 +5,8 @@ use_frameworks!
 
 target 'Makestagram' do
   pod 'Bond', '4.0.0'
-  pod "ConvenienceKit"
+  pod 'ConvenienceKit'
+  pod 'DateTools'
   pod 'Parse'
   pod 'ParseFacebookUtilsV4'
   pod 'ParseUI'

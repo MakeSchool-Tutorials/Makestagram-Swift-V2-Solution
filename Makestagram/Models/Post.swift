@@ -9,17 +9,15 @@
 import Foundation
 
 import Bond
+import ConvenienceKit
 import Parse
 
-// 1
 class Post : PFObject, PFSubclassing {
 
-  // 2
+  static var imageCache: NSCacheSwift<String, UIImage>!
 
   var image: Observable<UIImage?> = Observable(nil)
-
   var photoUploadTask: UIBackgroundTaskIdentifier?
-
   var likes: Observable<[PFUser]?> = Observable(nil)
 
   @NSManaged var imageFile: PFFile?
@@ -28,12 +26,10 @@ class Post : PFObject, PFSubclassing {
 
   //MARK: PFSubclassing Protocol
 
-  // 3
   static func parseClassName() -> String {
     return "Post"
   }
 
-  // 4
   override init () {
     super.init()
   }
@@ -43,9 +39,9 @@ class Post : PFObject, PFSubclassing {
     dispatch_once(&onceToken) {
       // inform Parse about this subclass
       self.registerSubclass()
+      Post.imageCache = NSCacheSwift<String, UIImage>()
     }
   }
-
 
 
   func uploadPost() {
@@ -59,7 +55,7 @@ class Post : PFObject, PFSubclassing {
 
       let imageData = UIImageJPEGRepresentation(image, 0.8)
       guard let imageFile = PFFile(data: imageData!) else {return}
-      imageFile.saveInBackgroundWithBlock(nil)
+      imageFile.saveInBackgroundWithBlock(ErrorHandling.errorHandlingCallback)
 
       user = PFUser.currentUser()
       self.imageFile = imageFile
@@ -71,33 +67,39 @@ class Post : PFObject, PFSubclassing {
   }
 
   func downloadImage() {
+
+    image.value = Post.imageCache[self.imageFile!.name]
+
     // if image is not downloaded yet, get it
-    // 1
     if (image.value == nil) {
-      // 2
+
       imageFile?.getDataInBackgroundWithBlock { (data: NSData?, error: NSError?) -> Void in
+        if let error = error {
+          ErrorHandling.defaultErrorHandler(error)
+        }
         if let data = data {
           let image = UIImage(data: data, scale:1.0)!
-          // 3
           self.image.value = image
+          // 2
+          Post.imageCache[self.imageFile!.name] = image
         }
       }
     }
   }
 
   func fetchLikes() {
-    // 1
     if (likes.value != nil) {
       return
     }
 
-    // 2
-    ParseHelper.likesForPost(self, completionBlock: { (var likes: [PFObject]?, error: NSError?) -> Void in
-      // 3
-      likes = likes?.filter { like in like[ParseHelper.ParseLikeFromUser] != nil }
+    ParseHelper.likesForPost(self, completionBlock: { (likes: [PFObject]?, error: NSError?) -> Void in
+      if let error = error {
+        ErrorHandling.defaultErrorHandler(error)
+      }
 
-      // 4
-      self.likes.value = likes?.map { like in
+      let validLikes = likes?.filter { like in like[ParseHelper.ParseLikeFromUser] != nil }
+
+      self.likes.value = validLikes?.map { like in
         let fromUser = like[ParseHelper.ParseLikeFromUser] as! PFUser
 
         return fromUser
