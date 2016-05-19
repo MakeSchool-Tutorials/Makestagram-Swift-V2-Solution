@@ -128,4 +128,10 @@ class Post : PFObject, PFSubclassing {
       ParseHelper.likePost(user, post: self)
     }
   }
+
+  //MARK: Flagging
+
+  func flagPost(user: PFUser) {
+    ParseHelper.flagPost(user, post: self)
+  }
 }

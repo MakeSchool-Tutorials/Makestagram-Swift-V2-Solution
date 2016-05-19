@@ -193,6 +193,22 @@ class ParseHelper {
       return query
   }
 
+  //MARK: Flagging
+
+  static func flagPost(user: PFUser, post: Post) {
+    let flagObject = PFObject(className: ParseFlaggedContentClass)
+    flagObject.setObject(user, forKey: ParseFlaggedContentFromUser)
+    flagObject.setObject(post, forKey: ParseFlaggedContentToPost)
+
+    let ACL = PFACL(user: PFUser.currentUser()!)
+    ACL.publicReadAccess = true
+    flagObject.ACL = ACL
+
+    //TODO: add error handling
+    flagObject.saveInBackgroundWithBlock(ErrorHandling.errorHandlingCallback)
+  }
+
+
 }
 
 extension PFObject {

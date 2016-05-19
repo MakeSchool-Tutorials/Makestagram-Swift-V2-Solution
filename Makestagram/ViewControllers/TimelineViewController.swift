@@ -51,6 +51,52 @@ class TimelineViewController: UIViewController, TimelineComponentTarget {
       completionBlock(posts)
     }
   }
+
+  // MARK: UIActionSheets
+
+  func showActionSheetForPost(post: Post) {
+    if (post.user == PFUser.currentUser()) {
+      showDeleteActionSheetForPost(post)
+    } else {
+      showFlagActionSheetForPost(post)
+    }
+  }
+
+  func showDeleteActionSheetForPost(post: Post) {
+    let alertController = UIAlertController(title: nil, message: "Do you want to delete this post?", preferredStyle: .ActionSheet)
+
+    let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+    alertController.addAction(cancelAction)
+
+    let destroyAction = UIAlertAction(title: "Delete", style: .Destructive) { (action) in
+      post.deleteInBackgroundWithBlock({ (success: Bool, error: NSError?) -> Void in
+        if (success) {
+          self.timelineComponent.removeObject(post)
+        } else {
+          // restore old state
+          self.timelineComponent.refresh(self)
+        }
+      })
+    }
+    alertController.addAction(destroyAction)
+
+    self.presentViewController(alertController, animated: true, completion: nil)
+  }
+
+  func showFlagActionSheetForPost(post: Post) {
+    let alertController = UIAlertController(title: nil, message: "Do you want to flag this post?", preferredStyle: .ActionSheet)
+
+    let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+    alertController.addAction(cancelAction)
+
+    let destroyAction = UIAlertAction(title: "Flag", style: .Destructive) { (action) in
+      post.flagPost(PFUser.currentUser()!)
+    }
+
+    alertController.addAction(destroyAction)
+
+    self.presentViewController(alertController, animated: true, completion: nil)
+  }
 }
 
 // MARK: Tab Bar Delegate
@@ -84,6 +130,7 @@ extension TimelineViewController: UITableViewDataSource {
     post.downloadImage()
     post.fetchLikes()
     cell.post = post
+    cell.timeline = self
     
     return cell
   }

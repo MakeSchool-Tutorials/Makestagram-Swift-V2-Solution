@@ -22,6 +22,8 @@ class PostTableViewCell: UITableViewCell {
   var postDisposable: DisposableType?
   var likeDisposable: DisposableType?
 
+  weak var timeline: TimelineViewController?
+
   var post:Post? {
     didSet {
 
@@ -71,9 +73,10 @@ class PostTableViewCell: UITableViewCell {
   }
 
   @IBAction func moreButtonTapped(sender: AnyObject) {
-
+    timeline?.showActionSheetForPost(post!)
   }
 
+  // Technically this should live in the VC, decide whether or not we should keep it here for simplicity
   @IBAction func likeButtonTapped(sender: AnyObject) {
     post?.toggleLikePost(PFUser.currentUser()!)
   }
