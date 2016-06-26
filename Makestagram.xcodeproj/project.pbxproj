@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		153FDE291DD063FD1A929703 /* Pods_Makestagram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 837E8DB1140E3C18464FF6A5 /* Pods_Makestagram.framework */; };
+		197C2101F47567D04400AD61 /* Pods_Makestagram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3E078C6EC40966A2617E8B4 /* Pods_Makestagram.framework */; };
 		62551B961B06C2F5000913E4 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62551B951B06C2F5000913E4 /* Social.framework */; };
 		62551B981B06C2FD000913E4 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62551B971B06C2FD000913E4 /* Accounts.framework */; };
 		62551B9A1B06C31F000913E4 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62551B991B06C31F000913E4 /* CoreLocation.framework */; };
@@ -32,6 +32,7 @@
 		62C8C1ED1B06BD6500DC3EA7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62C8C1EC1B06BD6500DC3EA7 /* Images.xcassets */; };
 		62C8C1F01B06BD6500DC3EA7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62C8C1EE1B06BD6500DC3EA7 /* LaunchScreen.xib */; };
 		62C8C1FC1B06BD6500DC3EA7 /* MakestagramTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C8C1FB1B06BD6500DC3EA7 /* MakestagramTests.swift */; };
+		94FA01D262D9198EF690BE35 /* Pods_MakestagramTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6D390476CA58900D0D06E24 /* Pods_MakestagramTests.framework */; };
 		96E3FABB1CE5203100E33485 /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E3FABA1CE5203100E33485 /* TimelineViewController.swift */; };
 		96E3FABD1CE5204400E33485 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E3FABC1CE5204400E33485 /* PhotoViewController.swift */; };
 		96E3FABF1CE5205200E33485 /* FriendSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E3FABE1CE5205200E33485 /* FriendSearchViewController.swift */; };
@@ -39,7 +40,6 @@
 		96E3FAC51CE57F9200E33485 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E3FAC41CE57F9200E33485 /* Post.swift */; };
 		96E3FAC91CE664D800E33485 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E3FAC81CE664D800E33485 /* PostTableViewCell.swift */; };
 		96E3FACB1CE669B200E33485 /* ParseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E3FACA1CE669B200E33485 /* ParseHelper.swift */; };
-		DDFAE46262A7003F4E6C962D /* Pods_MakestagramTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 036B11399ECD9CCD43FD0062 /* Pods_MakestagramTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,8 +66,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		036B11399ECD9CCD43FD0062 /* Pods_MakestagramTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MakestagramTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2E1AE507EDD2D18E4D8E4173 /* Pods-Makestagram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Makestagram.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Makestagram/Pods-Makestagram.debug.xcconfig"; sourceTree = "<group>"; };
+		258B0339F48DB9293051F386 /* Pods-Makestagram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Makestagram.release.xcconfig"; path = "Pods/Target Support Files/Pods-Makestagram/Pods-Makestagram.release.xcconfig"; sourceTree = "<group>"; };
 		62551B951B06C2F5000913E4 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		62551B971B06C2FD000913E4 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		62551B991B06C31F000913E4 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -97,8 +96,9 @@
 		62C8C1F51B06BD6500DC3EA7 /* MakestagramTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MakestagramTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		62C8C1FA1B06BD6500DC3EA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		62C8C1FB1B06BD6500DC3EA7 /* MakestagramTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakestagramTests.swift; sourceTree = "<group>"; };
-		6A7E718F73B597181DB79739 /* Pods-MakestagramTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MakestagramTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MakestagramTests/Pods-MakestagramTests.release.xcconfig"; sourceTree = "<group>"; };
-		837E8DB1140E3C18464FF6A5 /* Pods_Makestagram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Makestagram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		783053C4DD4986FC68B4A0B1 /* Pods-MakestagramTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MakestagramTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MakestagramTests/Pods-MakestagramTests.release.xcconfig"; sourceTree = "<group>"; };
+		7EA7BF9F860CA51BB02B98FD /* Pods-Makestagram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Makestagram.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Makestagram/Pods-Makestagram.debug.xcconfig"; sourceTree = "<group>"; };
+		80A47985C6C6C1CB8D2F7597 /* Pods-MakestagramTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MakestagramTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MakestagramTests/Pods-MakestagramTests.debug.xcconfig"; sourceTree = "<group>"; };
 		96E3FABA1CE5203100E33485 /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
 		96E3FABC1CE5204400E33485 /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		96E3FABE1CE5205200E33485 /* FriendSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendSearchViewController.swift; sourceTree = "<group>"; };
@@ -106,8 +106,8 @@
 		96E3FAC41CE57F9200E33485 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		96E3FAC81CE664D800E33485 /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		96E3FACA1CE669B200E33485 /* ParseHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseHelper.swift; sourceTree = "<group>"; };
-		B36487D561288225A997773D /* Pods-MakestagramTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MakestagramTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MakestagramTests/Pods-MakestagramTests.debug.xcconfig"; sourceTree = "<group>"; };
-		E90EF6307DCCDD1C8928B547 /* Pods-Makestagram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Makestagram.release.xcconfig"; path = "Pods/Target Support Files/Pods-Makestagram/Pods-Makestagram.release.xcconfig"; sourceTree = "<group>"; };
+		D3E078C6EC40966A2617E8B4 /* Pods_Makestagram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Makestagram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D6D390476CA58900D0D06E24 /* Pods_MakestagramTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MakestagramTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,7 +123,7 @@
 				62551B9A1B06C31F000913E4 /* CoreLocation.framework in Frameworks */,
 				62551B981B06C2FD000913E4 /* Accounts.framework in Frameworks */,
 				62551B961B06C2F5000913E4 /* Social.framework in Frameworks */,
-				153FDE291DD063FD1A929703 /* Pods_Makestagram.framework in Frameworks */,
+				197C2101F47567D04400AD61 /* Pods_Makestagram.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,7 +131,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DDFAE46262A7003F4E6C962D /* Pods_MakestagramTests.framework in Frameworks */,
+				94FA01D262D9198EF690BE35 /* Pods_MakestagramTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,8 +149,8 @@
 				62551B991B06C31F000913E4 /* CoreLocation.framework */,
 				62551B971B06C2FD000913E4 /* Accounts.framework */,
 				62551B951B06C2F5000913E4 /* Social.framework */,
-				837E8DB1140E3C18464FF6A5 /* Pods_Makestagram.framework */,
-				036B11399ECD9CCD43FD0062 /* Pods_MakestagramTests.framework */,
+				D3E078C6EC40966A2617E8B4 /* Pods_Makestagram.framework */,
+				D6D390476CA58900D0D06E24 /* Pods_MakestagramTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -207,7 +207,7 @@
 				62C8C1E21B06BD6500DC3EA7 /* Makestagram */,
 				62C8C1F81B06BD6500DC3EA7 /* MakestagramTests */,
 				62C8C1E11B06BD6500DC3EA7 /* Products */,
-				D5AC80CB111FD63A4816B224 /* Pods */,
+				69F254F6F2C6526CEE54A2BF /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -263,6 +263,17 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		69F254F6F2C6526CEE54A2BF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7EA7BF9F860CA51BB02B98FD /* Pods-Makestagram.debug.xcconfig */,
+				258B0339F48DB9293051F386 /* Pods-Makestagram.release.xcconfig */,
+				80A47985C6C6C1CB8D2F7597 /* Pods-MakestagramTests.debug.xcconfig */,
+				783053C4DD4986FC68B4A0B1 /* Pods-MakestagramTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		96E3FAC01CE5229000E33485 /* PhotoTaking */ = {
 			isa = PBXGroup;
 			children = (
@@ -293,17 +304,6 @@
 				96E3FAC81CE664D800E33485 /* PostTableViewCell.swift */,
 			);
 			path = Timeline;
-			sourceTree = "<group>";
-		};
-		D5AC80CB111FD63A4816B224 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				2E1AE507EDD2D18E4D8E4173 /* Pods-Makestagram.debug.xcconfig */,
-				E90EF6307DCCDD1C8928B547 /* Pods-Makestagram.release.xcconfig */,
-				B36487D561288225A997773D /* Pods-MakestagramTests.debug.xcconfig */,
-				6A7E718F73B597181DB79739 /* Pods-MakestagramTests.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -654,7 +654,7 @@
 		};
 		62C8C2001B06BD6500DC3EA7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2E1AE507EDD2D18E4D8E4173 /* Pods-Makestagram.debug.xcconfig */;
+			baseConfigurationReference = 7EA7BF9F860CA51BB02B98FD /* Pods-Makestagram.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -673,7 +673,7 @@
 		};
 		62C8C2011B06BD6500DC3EA7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E90EF6307DCCDD1C8928B547 /* Pods-Makestagram.release.xcconfig */;
+			baseConfigurationReference = 258B0339F48DB9293051F386 /* Pods-Makestagram.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -691,7 +691,7 @@
 		};
 		62C8C2031B06BD6500DC3EA7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B36487D561288225A997773D /* Pods-MakestagramTests.debug.xcconfig */;
+			baseConfigurationReference = 80A47985C6C6C1CB8D2F7597 /* Pods-MakestagramTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -712,7 +712,7 @@
 		};
 		62C8C2041B06BD6500DC3EA7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6A7E718F73B597181DB79739 /* Pods-MakestagramTests.release.xcconfig */;
+			baseConfigurationReference = 783053C4DD4986FC68B4A0B1 /* Pods-MakestagramTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
